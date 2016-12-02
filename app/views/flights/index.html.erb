@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="text-center"> Flights </h1>
+  <section class="row text-center cities-controls">
+      <a href="<%= new_flight_path %>" class="btn btn-default"> New Flight </a>
+  </section>
+  <% @flights.each do |f| %>
+    <article class="row city">
+      <ul>
+        <li class="col-md-2">Origin: <%= f.origin.name %></li>
+        <li class="col-md-2">Destination: <%= f.origin.name %></li>
+        <li class="col-md-2">Airline: <%= f.airline.name %></li>
+        <li class="col-md-2">Periodicity: <%= f.periodicity %></li>
+        <li class="col-md-2">Periodicity Time: <%= f.periodicity_time %></li>
+        <li class="col-md-2">Average Time: <%= f.avg_time %></li>
+        <li class="col-md-1"><a href="<%= flight_path(f.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
+        <li class="col-md-1"><a href="<%= edit_flight_path(f.id) %>" class="btn btn-primary"> Edit </a></li>
+        <li class="col-md-1"><a href="<%= flight_path(f.id) %>" class="btn btn-info"> Show </a></li>
+      </ul>
+    </article>
+  <% end if @flights.any? %>
+</div>

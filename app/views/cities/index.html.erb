@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="text-center"> Cities </h1>
+  <section class="row text-center cities-controls">
+      <a href="<%= new_city_path %>" class="btn btn-default"> New City </a>
+  </section>
+  <% @cities.each do |c| %>
+    <article class="row city">
+      <ul>
+        <li class="col-md-3"><strong><%= c.name %></strong></li>
+        <li class="col-md-3"><%= c.country_name %></li>
+        <li class="col-md-3"><%= c.time_zone %></li>
+        <li class="col-md-1"><a href="<%= city_path(c.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
+        <li class="col-md-1"><a href="<%= edit_city_path(c.id) %>" class="btn btn-primary"> Edit </a></li>
+        <li class="col-md-1"><a href="<%= city_path(c.id) %>" class="btn btn-info"> Show </a></li>
+      </ul>
+    </article>
+  <% end if @cities.any? %>
+</div>

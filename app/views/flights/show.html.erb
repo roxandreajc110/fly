@@ -1,0 +1,11 @@
+<div class="container">
+  <article class="row city">
+    <ul>
+      <li class="col-md-2"><strong><%= @flight.name %></strong></li>
+      <li class="col-md-2">Origin: <%= @flight.origin.name %></li>
+      <li class="col-md-2">Destination: <%= @flight.origin.name %></li>
+      <li class="col-md-2">Airline: <%= @flight.airline.name %></li>
+      <li class="col-md-2"><a href="<%= flight_path(@flight.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
+    </ul>
+  </article>
+</div>

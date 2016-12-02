@@ -1,0 +1,36 @@
+<div class="container">
+  <h2 class="text-center"> Origin Itineraries </h2>
+  <% @origin_itineraries.each do |oi| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= oi.plane.code %>
+    </div>
+    <div class="col-md-3">
+      <strong><%= oi.flight.origin.name %></strong>
+    </div>
+    <div class="col-md-3">
+      <strong><%= oi.flight.destination.name %></strong>
+    </div>
+    <div class="col-md-3">
+      <%= oi.flight.periodicity %>
+    </div>
+  </div>
+  <% end if @origin_itineraries %>
+  <h2 class="text-center"> Destination Intineraries </h2>
+  <% @destination_itineraries.each do |di| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= di.plane.code %>
+    </div>
+    <div class="col-md-3">
+      <strong><%= di.flight.origin.name %></strong>
+    </div>
+    <div class="col-md-3">
+      <strong><%= di.flight.destination.name %></strong>
+    </div>
+    <div class="col-md-3">
+      <%= di.flight.periodicity %>
+    </div>
+  </div>
+  <% end if @destination_itineraries %>
+</div>

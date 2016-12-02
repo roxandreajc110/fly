@@ -1,0 +1,13 @@
+var errors_messages = document.querySelector("#city-errors-messages");
+<% if @city.errors.any? %>
+  errors_messages.style.display = "unset";
+  errors_messages.innerHTML = "<%= j (render 'shared/errors_messages', object: @city) %>";
+<% else %>
+  if(errors_messages.innerHTML !== ""){
+    errors_messages.innerHTML = "";
+  }
+  var option_element = document.createElement("option");
+  option_element.value = <%= @city.id %>;
+  option_element.innerHTML = "<%= @city.name %>";
+  document.querySelector("select[name='airport[city_id]']").appendChild(option_element);
+<% end %>

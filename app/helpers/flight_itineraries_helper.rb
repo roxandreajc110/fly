@@ -1,0 +1,2 @@
+module FlightItinerariesHelper
+end
